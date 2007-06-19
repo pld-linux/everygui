@@ -1,0 +1,18 @@
+diff -urN everygui/setup.py everygui.new/setup.py
+--- everygui/setup.py	2006-01-10 09:59:47.000000000 +0100
++++ everygui.new/setup.py	2007-06-19 21:31:07.441207361 +0200
+@@ -22,11 +22,9 @@
+ 	author_email='seeplusplus@users.sf.net',
+ 	url='http://everygui.sourceforge.net',
+ 	license = 'GPL',
++    package_dir = {"everygui" : 'src'},
++    packages = ["everygui"],
++    scripts = ["everygui", "egdesign"],
+ 	data_files=[("share/everygui/ui", glob.glob("ui/*.glade")),
+-			("bin", ["everygui", "egdesign"]),
+-			("src/everygui", glob.glob("src/*")),
+-			("share/everygui/docs", ["COPYING","LGPL","README","ChangeLog","AUTHORS","TODO"]),
+ 			("share/everygui/egconfig", glob.glob("egconfig/*.egd"))]
+ 	)
+-
+-os.chmod("/usr/share/everygui/egconfig", 0777)
