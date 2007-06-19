@@ -1,3 +1,9 @@
+#
+# TODO:
+# - BRs
+# - Rs and check existing one
+# - patch easygui's code to run egdesigner from different location
+#
 Summary:	A GUI for everything
 Summary(pl.UTF-8):GUI do wszystkiego
 Name:		everygui
