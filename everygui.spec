@@ -5,19 +5,20 @@
 # - patch easygui's code to run egdesigner from different location
 #
 Summary:	A GUI for everything
-Summary(pl.UTF-8):GUI do wszystkiego
+Summary(pl.UTF-8):	GUI do wszystkiego
 Name:		everygui
 Version:	0.99.b
 Release:	0.1
 License:	GPL
 Group:		X11/Applications
-Source0:	%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/everygui/%{name}-%{version}.tar.gz
+# Source0-md5:	78953de66b973b97b194d679969acc9f
 Patch0:		%{name}-setup.patch
 Patch1:		%{name}-exec.patch
 URL:		http://everygui.sourceforge.net/
-Requires:	libglade2
+BuildRequires:	python-pygtk-gtk >= 2:2.6
 Requires:	python >= 2.3
-Requires:	python-pygtk-gtk >= 2.6
+Requires:	python-pygtk-libglade >= 2:2.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -38,23 +39,23 @@ Glade, but requires no coding at all to get the functionality working
 (that's Chameleon's job to do it automagically).
 
 %description -l pl.UTF-8
-EveryGui to jest próbą stworzenia GUI w GTK+ dla "Wszystkiego"
-(związanego z linią komend) na systemach UNIX. Cel osiągnięto
-dostarczając dwóch potężnych aplikacji:
+EveryGui to jest próbą stworzenia GUI w GTK+ do "wszystkiego"
+(związanego z programami działającymi z linii poleceń) na systemach
+UNIX. Cel osiągnięto dostarczając dwóch potężnych aplikacji:
 
-Cahmeleon, który jest dynamicznym GUI dla niemalże każdego
+Chameleona, który jest dynamicznym GUI dla niemalże każdego
 narzędzia albo komendy systemowej. Ładuje pliki konfiguracyjne
-narzędzi wybranych z listy i dynamiczny tworzy kontrolki
+narzędzi wybranych z listy i dynamicznie tworzy kontrolki
 reprezentujące przełączniki narzędzia. Chameleon nie tylko
 wywołuje komendy ale i również może zachować serię komend w
 pliku powłoki dla późniejszego/powtarzającego się użycia.
 
-I Designer, który jest wizualnym środowiskiem do tworzenia/edycji
-plików konfiguracyjnych które powodują różne zachowanie
+I Designera, który jest wizualnym środowiskiem do tworzenia/edycji
+plików konfiguracyjnych, które powodują różne zachowanie
 Chameleona dla każdego narzędzia/polecenia. Designer przypomina w
-zachowaniu mieszankę QT Designera i Glade ale nie wymaga żadnego
-programowania do uruchomienia funkcjonalności (to w końcu praca
-Chameleona aby robić to automagicznie).
+zachowaniu mieszankę Qt Designera i Glade'a, ale nie wymaga żadnego
+programowania do uruchomienia funkcjonalności (to w końcu zadanie
+Chameleona, aby robić to automagicznie).
 
 %prep
 %setup -q -n %{name}
