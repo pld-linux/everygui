@@ -77,12 +77,12 @@ cat << EOF > egdesign
 %{__python} %{py_sitescriptdir}/everygui/designer.pyc
 EOF
 
-%{__python} setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__python} setup.py install -O1 --skip-build --root $RPM_BUILD_ROOT
+%py_install -O1 --skip-build --root $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
